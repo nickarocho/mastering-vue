@@ -28,7 +28,7 @@
         },
         {
           "name": "Thane Shubaly",
-            "id": "5578ac0e-a7da-4c2b-b941-729f976ab144"
+          "id": "5578ac0e-a7da-4c2b-b941-729f976ab144"
         }
       ]
     },
@@ -75,6 +75,96 @@
           "id": "681438ef-fb16-449e-98ed-523823a9fd8b"
         }
       ]
+    },
+    {
+      "id": 5031724,
+      "user": {
+        "id": "abc123",
+        "name": "Nick Arocho"
+      },
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Nick Arocho"
+      },
+      "title": "New Event",
+      "description": "event description here",
+      "location": "The Moon",
+      "date": "2020-04-02T20:24:00.000Z",
+      "time": "6:00",
+      "attendees": []
+    },
+    {
+      "id": 5753270,
+      "user": {
+        "id": "abc123",
+        "name": "Nick Arocho"
+      },
+      "category": "animal welfare",
+      "organizer": {
+        "id": "abc123",
+        "name": "Nick Arocho"
+      },
+      "title": "asdf",
+      "description": "asdf",
+      "location": "asdf",
+      "date": "2020-02-05T21:27:00.000Z",
+      "time": "6:00",
+      "attendees": []
+    },
+    {
+      "id": 522389,
+      "user": {
+        "id": "abc123",
+        "name": "Nick Arocho"
+      },
+      "category": "housing",
+      "organizer": {
+        "id": "abc123",
+        "name": "Nick Arocho"
+      },
+      "title": "asdfas",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 8693518,
+      "user": {
+        "id": "abc123",
+        "name": "Nick Arocho"
+      },
+      "category": "animal welfare",
+      "organizer": {
+        "id": "abc123",
+        "name": "Nick Arocho"
+      },
+      "title": "test event",
+      "description": "test descripton",
+      "location": "my house",
+      "date": "2020-02-20T21:31:00.000Z",
+      "time": "5:00",
+      "attendees": []
+    },
+    {
+      "id": 36051,
+      "user": {
+        "id": "abc123",
+        "name": "Nick Arocho"
+      },
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Nick Arocho"
+      },
+      "title": "learn stuff",
+      "description": "get more smarter",
+      "location": "school",
+      "date": "2020-02-19T21:38:00.000Z",
+      "time": "18:00",
+      "attendees": []
     }
   ]
 }
