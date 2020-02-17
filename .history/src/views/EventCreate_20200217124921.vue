@@ -22,7 +22,6 @@ import { mapState, mapGetters } from 'vuex'
       // getEvent() {
       //   return this.$store.getters.getEventById
       // },
-      // Importing getters dynamically from the store, similar to how we dynamically get the state
       ...mapGetters(['catLength', 'getEventById']),
       ...mapState(['user', 'categories'])
     }

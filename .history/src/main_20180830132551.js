@@ -28,6 +28,6 @@ requireComponent.keys().forEach(fileName => {
 
 new Vue({
   router,
-  store, // injects the store directly to all components so they can have access to it
+  store,
   render: h => h(App)
 }).$mount('#app')

@@ -39,9 +39,6 @@ export default new Vuex.Store({
     },
     activeTodosCount: state => {
       return state.todos.filter(todo => !todo.done).length
-    },
-    getEventById: state => id => {
-      return state.events.find(event => event.id === id)
     }
   }
 })

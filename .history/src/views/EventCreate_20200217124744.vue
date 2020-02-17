@@ -3,7 +3,7 @@
     <h1>Create an Event, {{ user.name }}</h1>
     <p>This event was created by {{ user.id }}.</p>
     <p>there are {{ catLength }} categories</p>
-    <p>{{ getEventById(1) }}</p>
+    <p>{{ getEvent(1) }}</p>
     <ul>
       <li v-for="cat in categories" :key="cat">{{ cat }}</li>
     </ul>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
+import { mapState, magGetters } from 'vuex'
 
   export default {
     computed: {
@@ -22,8 +22,7 @@ import { mapState, mapGetters } from 'vuex'
       // getEvent() {
       //   return this.$store.getters.getEventById
       // },
-      // Importing getters dynamically from the store, similar to how we dynamically get the state
-      ...mapGetters(['catLength', 'getEventById']),
+      ...mapGetters(['catLength', 'getEvent']),
       ...mapState(['user', 'categories'])
     }
   }
