@@ -1,31 +1,24 @@
 <template>
   <div>
     <h1>Events Listing</h1>
+    <!-- print out 1 event card per item in the array from state -->
     <EventCard v-for="event in events" :key="event.id" :event="event"/>
   </div>
 </template>
 
 <script>
 import EventCard from '@/components/EventCard.vue'
-import EventService from '@/services/EventService.js'
+import { mapState } from 'vuex'
 
 export default {
   components: {
     EventCard
   },
-  data() {
-    return {
-      events: []
-    }
-  },
   created() {
-    EventService.getEvents()
-      .then(response => {
-        this.events = response.data
-      })
-      .catch(error => {
-        console.log('There was an error:', error.response)
-      })
-  }
+    // 1. call the action
+    this.$store.dispatch('fetchEvents')
+  },
+  // 2. get access to the state using mapState helper
+  computed: mapState(['events'])
 }
 </script>
