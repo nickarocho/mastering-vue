@@ -5,13 +5,15 @@ import Vuex from 'vuex'
 // the const which is exported
 import * as user from '@/store/modules/user.js'
 import * as event from '@/store/modules/event.js'
+import * as notification from '@/store/modules/notification.js'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
     user,
-    event
+    event,
+    notification
   },
   state: {
     categories: [
