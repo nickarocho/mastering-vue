@@ -543,6 +543,24 @@
       "date": "2020-02-19T21:38:00.000Z",
       "time": "18:00",
       "attendees": []
+    },
+    {
+      "id": 1012592,
+      "user": {
+        "id": "abc123",
+        "name": "Nick"
+      },
+      "category": "animal welfare",
+      "organizer": {
+        "id": "abc123",
+        "name": "Nick"
+      },
+      "title": "asdfas",
+      "description": "",
+      "location": "asdfsa",
+      "date": "2020-02-29T18:35:00.000Z",
+      "time": "3:00",
+      "attendees": []
     }
   ]
 }
