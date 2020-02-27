@@ -20,15 +20,15 @@ const apiClient = axios.create({
 //   - templates get loaded before API call is returned
 
 // when request is about to go out, start the progress bar
-apiClient.interceptors.request.use(config => {
-  NProgress.start()
-  return config
-})
-// when request returns, finish the progress bar
-apiClient.interceptors.response.use(response => {
-  NProgress.done()
-  return response
-})
+// apiClient.interceptors.request.use(config => {
+//   NProgress.start()
+//   return config
+// })
+// // when request returns, finish the progress bar
+// apiClient.interceptors.response.use(response => {
+//   NProgress.done()
+//   return response
+// })
 
 export default {
   getEvents(perPage, page) {
