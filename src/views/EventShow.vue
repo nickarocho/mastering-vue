@@ -25,17 +25,25 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
+import NProgress from 'nprogress'
+import store from '@/store/store'
 
 export default {
   props: ['id'],
-  created() {
-    this.fetchEvent(this.id)
+  // start the progress bar BEFORE navigating to this component
+  beforeRouteEnter(routeTo, routeFrom, next) {
+    NProgress.start()
+    // since this lifecycle hook doesn't have access to 'this', we need
+    // to import the Vuex store and dispatch this event directly
+    store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
+      NProgress.done()
+      next()
+    })
   },
   computed: mapState({
     event: state => state.event.event
-  }),
-  methods: mapActions('event', ['fetchEvent']) // namespace, then array of actions to map
+  })
 }
 </script>
 <style scoped>
