@@ -152,7 +152,4 @@ import { required, email } from 'vuelidate/lib/validators'
 <style lang="scss" scoped>
 // bringing in DatePicker styles cuz this: https://www.npmjs.com/package/@hokify/vuejs-datepicker#regarding-css
 @import "./../../node_modules/@hokify/vuejs-datepicker/dist/vuejs-datepicker.css";
-.field {
-  margin-bottom: 24px;
-}
 </style>
