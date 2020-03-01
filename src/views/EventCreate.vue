@@ -78,9 +78,14 @@
         <p v-if="!$v.event.time.required" class="errorMessage">Time is required.</p>
       </template>
 
-      <BaseButton buttonClass="-fill-gradient">
+      <BaseButton
+        type="submit"
+        buttonClass="-fill-gradient"
+        :disabled="$v.$anyError"
+      >
         Submit
       </BaseButton>
+      <p v-if="$v.$anyError" class="errorMessage">Please fill out the required field(s).</p>
     </form>
   </div>
 </template>
@@ -91,9 +96,7 @@ import NProgress from 'nprogress'
 import { required, email } from 'vuelidate/lib/validators'
 
   export default {
-    components: {
-      DatePicker
-    },
+    components: { DatePicker },
     data() {
       const times = []
       for (let i = 1; i <= 24; i++) {
@@ -117,16 +120,19 @@ import { required, email } from 'vuelidate/lib/validators'
     },
     methods: {
       createEvent() {
-        NProgress.start()
-        this.$store.dispatch('event/createEvent', this.event).then(() => {
-          this.$router.push({
-            name: 'event-show',
-            params: { id: this.event.id }
+        this.$v.$touch() // makes sure every field is $dirty
+        if (!this.$v.$invalid) {
+          NProgress.start()
+          this.$store.dispatch('event/createEvent', this.event).then(() => {
+            this.$router.push({
+              name: 'event-show',
+              params: { id: this.event.id }
+            })
+            this.event = this.createFreshEventObject()
+          }).catch(() => {
+            NProgress.done()
           })
-          this.event = this.createFreshEventObject()
-        }).catch(() => {
-          NProgress.done()
-        })
+        }
       },
       createFreshEvent() {
         const user = this.$store.state.user.user
