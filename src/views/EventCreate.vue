@@ -54,13 +54,12 @@
       </template>
 
       <h3>When is your event?</h3>
-      <div class="field">
+      <div class="field" :class="{ error: $v.event.date.$error }">
         <label>Date</label>
         <DatePicker
           v-model="event.date"
           placeholder="Select a date"
-          :input-class="{ error: $v.event.date.$error }"
-          @opened="$v.event.date.$touch()"
+          @closed="$v.event.date.$touch()"
         />
       </div>
       <template v-if="$v.event.date.$error">
