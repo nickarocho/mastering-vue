@@ -10,7 +10,7 @@ import Vuelidate from 'vuelidate'
 
 Vue.use(Vuelidate)
 
-Vue.component('BaseIcon', BaseIcon)
+Vue.component('BaseIcon', BaseIcon) 
 
 Vue.config.productionTip = false
 
